@@ -2,17 +2,20 @@ import scala.io.StdIn.readLine
 
 object InventoryManagement {
 
-    def getProductList():List[String]={
-        def loop(products: List[String]):List[String]={
-            val input = readLine("Enter product name (or type 'done' to finish): ")
-            if (input.toLowerCase == "done"){
-                products
-            }
-            else {
-                loop(products :+ input)
-            }
+    def getProductList(): List[String] = {
+        var products: List[String] = List.empty
+        var continue = true
+
+        while (continue) {
+        val input = readLine("Enter product name (or type 'done' to finish): ")
+        if (input.toLowerCase == "done") {
+            continue = false
+        } else {
+            products = products :+ input
         }
-        loop(List.empty)
+        }
+
+        products
     }
 
     def printProductList(products: List[String]):Unit={
