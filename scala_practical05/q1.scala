@@ -36,3 +36,4 @@ object InventoryManagement {
         println(s"Total number of products: ${getTotalProducts(productList)}")
     }
 }
+
